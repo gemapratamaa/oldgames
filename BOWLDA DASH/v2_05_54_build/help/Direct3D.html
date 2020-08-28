@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Direct3D</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<SCRIPT SRC="js/jquery.min.js"></SCRIPT>
+	<SCRIPT>
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "DxWnd.html?" + sTopicUrl;
+			}
+		});
+	
+	</SCRIPT>
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+		H3 { color: #000000 }
+		H3.cjk { font-family: "SimSun" }
+		H3.ctl { font-family: "Mangal" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_configuration_direct3d4.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=503 HEIGHT=555 BORDER=0></P>
+	<H3 CLASS="western">Direct3D tweaks</H3>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Textures not
+				power of 2 fix</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NOPOWER2FIX</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Some games
+				don't properly check whether the hardware can properly manage
+				textures whose sizes are not a power of 2 (e.g. 16, 32, 64, 128
+				bits). If textures of a different size are processed by hardware
+				without this capability, you get diagonal effects on the rendered
+				image. The option fixes this problem.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Clean ZBUFFER
+				@0.0 fix</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ZBUFFER0CLEAN</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Some games
+				don't properly clear the zeta buffer between frames, producing
+				incorrect surface z-ordering and other issues. This flag fixes
+				this problem. For an example, see <A HREF="SnowBoardRacer.html">Examples
+				&gt; SnowBoard: Racer</A>.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Clean ZBUFFER
+				@1.0 fix</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ZBUFFERCLEAN</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Some games
+				don't properly clear the zeta buffer between frames, producing
+				incorrect surface z-ordering and other issues. This flag fixes
+				this problem. It is similar to ZBUFFER0CLEAN, but it works in
+				different contexts.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Clean ZBUFFER
+				hard</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ZBUFFERHARDCLEAN</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Fixes &quot;Star
+				Wars Ep.1 Racer&quot; ZBuffer problems producing the same effect
+				as the &quot;Clean ZBUFFER @1.0&quot; flag but using a quite
+				different approach. It is called &quot;hard&quot; because it is a
+				little &quot;rude&quot;, you're not supposed to write directly on
+				top of the ZBuffer surface, but it works!</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dynamic
+				ZBUFFER fix</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DYNAMICZCLEAN</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Needed to fix
+				some of &quot;Tonic Trouble&quot; rendering problems.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Suppress
+				D3D8/9 Reset</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NOD3DRESET</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Do not
+				perform the D3D reset operation.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Suppress d3d9
+				extensions</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SUPPRESSD3DEXT</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">D3d9.dll
+				comes in different versions depending on the platform: on older
+				windows releases it exports the Direct3DCreate API, while in more
+				recent versions there are many further exported calls. This flag
+				suppresses the additional entries.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Enumerate
+				16bit modes</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ENUM16BITMODES</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">On Windows
+				10, the list of available video modes (see
+				DirectDraw8/9::EnumAdapterModes) may not include those with color
+				depths lower than 32bpp while no fullscreen programs are running
+				(known as &quot;desktop composition mode&quot;). This may impact
+				games that need 8- or 16-bit color depth. This flag forces the
+				inclusion of modes with 16-bit color depth. This option may help
+				when a Direct3D8/9 program running on Windows 10 lacks the proper
+				video mode and terminates.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Trim texture
+				formats</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TRIMTEXTUREFORMATS</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Emulates the
+				&quot;DirectXTrimTextureFormats&quot; shim as closely as
+				possible. Trims the ZBufferFormats so that no more than 3 entries
+				are enumerated, in growing color depth order, and 32-bit formats
+				are omited. For an example, see <A HREF="HG2.html">Examples &gt;
+				Heavy Gear 2</A>.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force setting
+				gamma ramp</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCED3DGAMMARAMP</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Enable gamma
+				ramp control from windowed game, though changing the whole
+				desktop. Makes &quot;Morrowind&quot; more playable.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Enable Light
+				gamma ramp</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">LIGHTGAMMARAMP</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">To enable
+				gamma ramp correction in D3D lights. See <A HREF="Gamma.html">Gamma control</A>.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=186>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Pretend HW T&L cap.</P>
+			</TD>
+			<TD WIDTH=127>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TRANSFORMANDLIGHT</P>
+			</TD>
+			<TD WIDTH=1224>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">
+				Pretends that the video card has hardware transformation and light capabilities. This is not necessary since 
+				DirectX can emulate T&L by software transparently to the application, but some games make a check for this 
+				capability and refuse to run if it is missing, so this flag makes them running.
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Texture handling</H3>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">These flags help
+	modders manage game textures. In particular, they can highlight
+	where textures should be used, extracting them as bitmaps, or
+	replace textures with custom ones. Use the Dump flag to extract
+	textures, or the Hack flag if you plan on using a graphics editor to
+	create customized replacement textures.</P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">None</P>
+			</TD>
+			<TD WIDTH=134></TD>
+			<TD WIDTH=1347>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">The default
+				behavior. Does not apply special handling to textures.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Highlight</P>
+			</TD>
+			<TD WIDTH=134>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TEXTUREHIGHLIGHT</P>
+			</TD>
+			<TD WIDTH=1347>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">All hooked
+				textures are replaced with a randomly-generated solid color. This
+				makes it easier to see texel boundaries and texture usage.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dump</P>
+			</TD>
+			<TD WIDTH=134>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TEXTUREDUMP</P>
+			</TD>
+			<TD WIDTH=1347>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">All hooked
+				textures that match the criteria in the Texture section of your
+				dxwnd.ini configuration file are extracted as bitmap files and
+				dumped into DxWnd's &quot;texture.out&quot; subfolder. The
+				automatic filenames include a hash of the file's graphical
+				content to make it easier to uniquely identify each texture.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=56>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hack</P>
+			</TD>
+			<TD WIDTH=134>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TEXTUREHACK</P>
+			</TD>
+			<TD WIDTH=1347>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">This option
+				replaces all hooked textures by calculating hashed filenames,
+				looking for those names in DxWnd's &quot;texture.in&quot;
+				subfolder, and using any matching textures that it finds there.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Emulation</H3>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=200>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Emulate 16bpp
+				D3D8 backbuffer</P>
+			</TD>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">D3D8BACK16</P>
+			</TD>
+			<TD WIDTH=1225>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">D3D8 16bpp
+				backbuffer emulation on 32bpp color depth. Fixes &quot;Dangerous
+				Waters&quot; on 32bpp Win8-10 systems.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Force Vertex Processing</H3>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">This option allows you
+	to make experiments with different vertex processing settings for
+	D3D8/9. When setting D3DCREATE_MIXED_VERTEXPROCESSING or
+	D3DCREATE_SOFTWARE_VERTEXPROCESSING it also trims down the
+	D3DCREATE_PUREDEVICE flag that is incompatible with these two and
+	causes a D3D error.</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">NOTE: Changing this
+	option to software or mixed may help with rendering problems.
+	(Virtual Skipper 5)</P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=200>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Default</P>
+			</TD>
+			<TD WIDTH=112></TD>
+			<TD WIDTH=1225></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=200>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">hardware</P>
+			</TD>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCEHWVERTEXPROC</P>
+			</TD>
+			<TD WIDTH=1225>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hardware
+				setting uses the video card (GPU).</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=200>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">software</P>
+			</TD>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCESWVERTEXPROC</P>
+			</TD>
+			<TD WIDTH=1225>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Software
+				setting uses the system (CPU). Win10 anniversary update seems 
+				to default to software mode which can cause performance issues.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=200>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">mixed</P>
+			</TD>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCEMXVERTEXPROC</P>
+			</TD>
+			<TD WIDTH=1225></TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Swap Effect</H3>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Forces Swap Effect</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">FORCESWAPEFFECT</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">This experimental flag
+	forces the selected SwapEffect mode during the CreateDevice/Reset
+	methods. In some cases, it may improve compatibility or performance.
+	You can choose from the following modes:</P>
+	<UL>
+		<LI><P>Discard 
+		</P>
+		<LI><P>Flip 
+		</P>
+		<LI><P>Copy 
+		</P>
+		<LI><P>Overlay 
+		</P>
+		<LI><P STYLE="margin-bottom: 0.5cm">FlipEx 
+		</P>
+	</UL>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">3D effects</H3>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=126>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Disable
+				Textures</P>
+			</TD>
+			<TD WIDTH=116>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NOTEXTURES</P>
+			</TD>
+			<TD WIDTH=1295>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Remap all
+				textures with a white texture (Direct3D only).</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=126>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">3D wireframe</P>
+			</TD>
+			<TD WIDTH=116>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">WIREFRAME</P>
+			</TD>
+			<TD WIDTH=1295>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Show graphics
+				in wireframe mode. This option works with Direct3D and OpenGL
+				programs, but not with DirectDraw programs.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=126>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Disable
+				Fogging</P>
+			</TD>
+			<TD WIDTH=116>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DISABLEFOGGING</P>
+			</TD>
+			<TD WIDTH=1295>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Disables the
+				fogging effect (Direct3D only).</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=126>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Clear target
+				viewport</P>
+			</TD>
+			<TD WIDTH=116>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">CLEARTARGET</P>
+			</TD>
+			<TD WIDTH=1295>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Forcefully
+				invokes the Direct3D &quot;Clean&quot; method on the target
+				surface every time the &quot;BeginScene&quot; method is invoked.
+				Most games already do this, but some omit it because there were
+				no undesired effects on the computers that were in use at the
+				time. Running these games in windowed mode on modern platforms
+				may show trails of previous frames. This flag cleans up graphical
+				artifacts from old frames, resolving this issue.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DIV ID="topic_footer" DIR="LTR">
+		<P STYLE="margin-bottom: 0.5cm"><BR><BR>
+		</P>
+	</DIV>
+</DIV>
+</BODY>
+</HTML>

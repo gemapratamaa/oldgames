@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Status</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		H1 { color: #000000; font-style: normal; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P></P>
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">This command shows a
+	status window with icons that help tracking the mouse position as seen by the target program
+	after the coordinate scaling transformations:</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/mousepos.png" NAME="grafiikka4"ALIGN=BOTTOM BORDER=0></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">The icons will show in a window space that corresponds
+	to the virtual desktop resolution.
+	There are 4 types of icons, each one referring to a specific mouse transformation:</P>
+
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+			<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/finder_blue.bmp"
+			 NAME="grafiikka4"ALIGN=BOTTOM BORDER=0></P>			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">blue viewfinder: 
+				mouse coordinates received by the Windows message processing routine as
+				defined  by USER32 SetWindowLong(GWL_WNDPROC) system call.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+			<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/finder_yellow.bmp"
+			 NAME="grafiikka4"ALIGN=BOTTOM BORDER=0></P>			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">yellow viewfinder: 
+				mouse coordinates received by the Windows hook callbacks defined by USER32
+				SetWindowsHookEx system call.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+			<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/finder_green.bmp"
+			 NAME="grafiikka4"ALIGN=BOTTOM BORDER=0></P>			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">green viewfinder: 
+				mouse coordinates of the POINT pt field of Windows messages extracted
+				from the message queue with USER32 PeekMessage / GetMessage calls.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+			<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/finder_red.bmp"
+			 NAME="grafiikka4"ALIGN=BOTTOM BORDER=0></P>			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">red viewfinder: 
+				mouse coordinates returned by the USER32 GetCursorPosition system call
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DIV>
+<DIV ID="topic_footer" DIR="LTR">
+	<P><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

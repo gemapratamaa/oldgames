@@ -1,0 +1,20 @@
+:: Rolling hills 
+
+Just drag and drop this file on the loader in order 
+to set the maps up. Then start Happyland Adventures
+and click "custom game", and then "play".
+
+#
+rolling_hills_1.map
+rolling_hills_2.map
+rolling_hills_3.map
+#
+rh_bonus_1.map
+rh_bonus_2.map
+#
+
+:: info
+The Rolling Hills maps were created by Johan Peitz.
+For more Happyland Adventures action, go to
+www.freelunchdesign.com
+

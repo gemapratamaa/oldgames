@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Debug</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+		H3 { color: #000000 }
+		H3.cjk { font-family: "SimSun" }
+		H3.ctl { font-family: "Mangal" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_debug.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=503 HEIGHT=555 BORDER=0></P>
+	<H3 CLASS="western">Debug Flags</H3>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Enable
+				capability mask</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">CAPMASK</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Full RECT
+				Blit</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FULLRECTBLT</P>
+			</TD>
+			<TD WIDTH=1160>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Causes every
+				blit operation to primary surface to be applied to the full
+				surface (NULL rect coordinates). It could be handy to recover
+				wrong surface handling.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Center to
+				Window</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">CENTERTOWIN</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force
+				D3DCMP_ALWAYS setting</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ZBUFFERALWAYS</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force hot
+				patching</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOTPATCHALWAYS</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Freeze
+				injected son process</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FREEZEINJECTEDSON</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Stress
+				resources</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">STRESSRESOURCES</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Debug Mode Logs</H3>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Start with
+				toggle</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">STARTWITHTOGGLE</P>
+			</TD>
+			<TD WIDTH=1160>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Initialize
+				custom key toggle to active status. Checking this flag will turn all flagged Dump 
+				functions on from the start of hook with no need to press the custom key toggle.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Assert Dialog</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ASSERTDIALOG</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dump bitmaps</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DUMPBITMAP</P>
+			</TD>
+			<TD WIDTH=1160>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Debug utility
+				making images of HBITMAP resources in bmp.out game folder.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dump DIB
+				Sections</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DUMPDIBSECTION</P>
+			</TD>
+			<TD WIDTH=1160>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Debug utility
+				making images of DIB resources in bmp.out game folder. Note: images of DIBs with negatve height will be up-side-down.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dump Device
+				Context</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DUMPDEVCONTEXT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Dump CPUID</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DUMPCPUID</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Capture
+				screenshots</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">CAPTURESCREENS</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">Visual Flags</H3>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Suppress
+				ddraw Blt to primary</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NODDRAWBLT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Suppress
+				ddraw Flip</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NODDRAWFLIP</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Suppress GDI
+				Blt</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NOGDIBLT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Do not Blt to
+				primary</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">NOBLT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Use FastBlt
+				to primary</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DOFASTBLT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Highlight
+				blit to primary</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">MARKBLIT</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Highlight
+				Locked surfaces</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">MARKLOCK</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Highlight
+				WinG32 operations</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">MARKWING32</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Highlight
+				GDI32 operations</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">MARKGDI32</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">D3D tweaks</H3>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Patch execute buffer</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">PATCHEXECUTEBUFFER</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force ZBuffer ON</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCEZBUFFERON</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=204>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force ZBuffer OFF</P>
+			</TD>
+			<TD WIDTH=133>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCEZBUFFEROFF</P>
+			</TD>
+			<TD WIDTH=1160></TD>
+		</TR>
+	</TABLE>
+	<DIV ID="topic_footer" DIR="LTR">
+		<P STYLE="margin-bottom: 0.5cm"><BR><BR>
+		</P>
+	</DIV>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>OpenGL</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<SCRIPT SRC="js/jquery.min.js"></SCRIPT>
+	<SCRIPT>
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "DxWnd.html?" + sTopicUrl;
+			}
+		});
+	
+	</SCRIPT>
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		H1 { color: #000000; font-style: normal; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P></P>
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_configuration_opengl.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=503 HEIGHT=555 BORDER=0></P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook OpenGL</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOOKOPENGL</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Enables
+				OpenGL API hooking.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force Hook</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FORCEHOOKOPENGL</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Experimental
+				&ndash; probably unnecessary.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Fix
+				glPixelZoom args</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FIXPIXELZOOM</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Scales the
+				xfactor and yfactor parameters of the glPixelZoom OpenGL call.
+				Use this flag if the OpenGL screen is not properly scaled to fit
+				the main window.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Fix
+				glBindTexture texture</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">FIXBINDTEXTURE</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Recent OpenGL
+				releases for Windows omit the glActiveTexture function,
+				preventing the application from correctly switching textures. The
+				visible effect is a replication of a single texture instead of
+				the coordinated use of multiple textures to compose a screen.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Scale
+				glBitmaps</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SCALEGLBITMAPS</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Flag for
+				runtime scaling of OpenGL glBitmap bitmaps - usable in &quot;Devil
+				Whiskey&quot;.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook glut32</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOOKGLUT32</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">This flag
+				hooks the glut32.dll OpenGL extension library to fix issues with
+				some OpenGL games.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Custom OpenGL
+				library</P>
+			</TD>
+			<TD WIDTH=141></TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">By default,
+				DxWnd detects OpenGL APIs within the standard OpenGL32.dll
+				library. This field allows you to set a different filename for
+				any custom OpenGL implementation that may refer to a different
+				library name.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook wgl
+				context calls</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOOKWGLCONTEXT</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Flag to
+				conditionally hook OpenGL wgl extensions.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Scale desktop
+				viewport only</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SCALEMAINVIEWPORT</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">
+				Flag to scale viewport size only when matching to desktop virtual size.
+				In certain cases, it is necessary to scale only the viewport of the final rendering
+				device, but the OpenGL call doesn't support a target typology, so guessing on the
+				viewport requested size seems the only way.
+				</P>
+			</TD>
+		</TR>
+
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Lock
+				viewport</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">LOCKGLVIEWPORT</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">
+				Imposes a fixed viewport area as big as the whole window in case the application 
+				omitted to declare one and this causes malfuncioning.
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=168>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OpenGL extension lie
+				</P>
+			</TD>
+			<TD WIDTH=141>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">GLEXTENSIONSLIE</P>
+			</TD>
+			<TD WIDTH=1228>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">
+				Some programs could malfunction because of a very long OpenGL extension string.
+				This flag forces all calls that return OpenGL extensions to return a single, short
+				fake extension.
+				</P>
+			</TD>
+		</TR>
+
+
+	</TABLE>
+</DIV>
+<DIV ID="topic_footer" DIR="LTR">
+	<P><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

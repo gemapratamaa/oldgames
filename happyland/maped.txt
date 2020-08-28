@@ -1,0 +1,197 @@
+
+                          ***************************
+                          *  HAPPYLAND  ADVENTURES  *
+                          *    M A P E D I T O R    *
+                          ***************************
+                
+                     written by Johan Peitz (c) 2000 - 2002
+
+
+THE MAP-FORMAT
+
+  Maps in Happyland consists of 6 'layers'. Not all are gfx, some are used to
+  give tiles certain abilities. Here's a short explanation of the layers:
+        1       base tiles, use this for ground and background gfx
+        2       cover tiles, this layer will be drawn on top of all characters
+                in the game, use it to create nice graphical effects and
+                secret passages
+        3       walkmask, each tile has a walkmask, these define how
+                characters can pass through the space occupied by the tile
+        4       items, this is for bonus fruits and special items
+        5       npcs, happylanders, enemies and old men
+        6       tile type, used to specify wether tile is a door, spikes,
+                safespot or any other speciality.
+
+  Maps can be in all sizes (except smaller than then screen). Use INSERT and
+  DELETE with the arrowkeys to adjust the size. Eg INS and <- will increase
+  the map by adding tiles to the left.
+
+
+HOW TO USE THE EDITOR
+
+  Before you create a new level, try to visualize what it will be like,
+  or even better, draw it on paper first. It will make things much easier.
+
+  Try to create the map in these steps, I find it the most suitable way.
+
+        1. Draw the terrain
+        2. Draw items and types
+        3. Draw npcs
+        4. Draw secrets
+
+  When starting the mapeditor, a default map will be given. To get the
+  file-menu, press ALF and F. To set the properties of your map, press
+  ALT and M. Use the mouse
+  to position tiles on the map. Left button to put, and right button to pick.
+  Use Z and X to change tile (or press ALT+t for a tile menu). When positioning 
+  the npcs, things are a little bit different. Use left button to position the 
+  npc as usual but to remove a npc, click on it with the right button. Wise men 
+  can be taught lines to say by pressing 't' when the mouse pointer is on them.
+
+  The walkmask is set on automatic and unless you want to do specific stuff
+  (like secrets) you shouldn't need to bother with it. Creating slopes
+  however is a bit tricky. Read the SLOPE section further down. Make sure you 
+  get it correct, look at the example map to see how it's done. You can use 
+  the mask-checker (F3) to find most errors.
+
+
+SPECIAL TILES (TYPES)
+
+  Make sure to mark all spikes with the spike type. The same goes for the
+  safespots for the happylanders, and exits. The door type is a bit special.
+  When enough happylanders have been saved and the door is to be opened, the
+  walkmask on the blocks marked DOOR will be removed, making entrance
+  possible. Also, the cover-layer on tiles marked DOOR will be removed. Hence
+  you should draw the door tiles in the cover-layer.
+
+  Applying the ICE-type to a tile will create a slide-effect.
+
+
+SWITCH BLOCKS
+
+  In order to set up the switch blocks and the triggers you need to set 
+  the correct types. The trigger tile should have the type SWITCH and the 
+  green blocks should have the type SWAP. Don't forget to set the green blocks 
+  to solid. (You also need to set the transparent green blacks to SWAP.)
+
+
+SLOPES
+
+  Making slopes in the editor isn't super-easy. Well, drawing them is easy 
+  but making the walkmask work isn't. First, draw the slope. Make sure you 
+  have a few solid blocks beneath it, otherwise the walkmask-checker (F3) 
+  will whine.
+
+  Now, when you have drawn your slope, switch to the walkmask-layer (3). 
+  The walkmask is set automatically except for two positions. The top and
+  the bottom of the slope. The tiles are often marked as complete solids
+  but should be slope masks. Edit by hand until you get the correct masks.
+
+  It should look something like this when done:  (excuse my ASCII)
+
+  ______
+  |  |  \		It's the mask (a) and sometimes the mask (b)
+  |  |a |\ 		that you have to set yourself. Notice that the
+  |__|__|_\		mask (b) is lower then the general ground.
+  |  |  |  \
+  |  |  |  |\
+  |__|__|__|_\ ______
+  |  |  |  |  \  |  |
+  |  |  |  |b |  |  |
+  |__|__|__|__|__|__|
+
+  Take a look at the example levels to see how correct slopes work.
+
+
+HINTS & TIPS
+
+  Always leave lots of space at the top of your map. Otherwise, the player
+  can jump into parts that isn't on the map and strange thing might happen.
+
+  Make sure there are walls along the sides and spikes at the bottom. The
+  game engine does not fix this by itself. It's up to you.
+
+  Always do secrets last. That way you don't have to bother that much with
+  the walkmask layer if you want to redo something.
+  
+  To get an overview of you map, leave the editor and drag and drop the .map
+  file onto the editor executable. This will create an image that you can 
+  look at. See the file maped.ini for more details.
+
+  If you make any levels that you think are good enough to for other to enjoy,
+  go to www.freelunchdesign.com and read how to get them featured on the site
+  and make the game even bigger!
+
+
+KEYS
+
+  ALT+f                   file menu
+  ALT+m                   map-properties
+  ALT+t                   tile menu (only in layer 1 and 2)
+  1,2,3,4,5,6             base,cover,walkmask,item,npc,type
+  z/x                     prev/next tile
+  ALT+n                   new map
+  ALT+s                   save map
+  ALT+a                   save map as
+  ALT+l                   load map
+  ALR+r                   revert map
+  ALT+q                   erase all npc
+  t                       set text for wise man (only in NPC-mode)
+  M+arrow                 shift map
+  INS+arrow               inc map
+  DEL+arrow               dec map
+  F2                      cover on/off
+  F3                      walkmask-check
+  F5                      set startpos
+  F7                      dump map as image (see maped.ini for options)
+  F8                      take screenshot
+  F9                      set random tile on/off
+  F11                     set bg colors
+  F12                     toggle screen resolution
+  TAB                     slow scroll
+  ESC                     quit
+
+
+DISCLAIMER
+                  
+    I do not accept responsibility for any effects, adverse or otherwise, 
+    that this software may have on you, your computer, your sanity, your 
+    dog, or anything else that you can think of. Use it at your own risk. 
+    I have, however, never experienced any trouble with it.
+
+
+CONTACT & SUPPORT
+
+    Free Lunch Design is an independent game developer from Sweden. Our aim
+    is to create small, high quality games, where gameplay is in focus.
+
+    Visit us on the web: http://www.freelunchdesign.com
+
+    If you have comments, bug reports, or just want to ask something
+    you can contact Free Lunch Design by e-mail. I do however get a lot of 
+    mail and it might take a while before I answer, so if you have a question 
+    please check the online faqs and forums first.
+
+      E-Mail: info (at) freelunchdesign (dot) com
+
+
+    If you want to support Free Lunch Design in monetary ways, please enter
+    our website (see above) and click our sponsors a few times. :)
+
+
+
+
+
+                                - The End -
+
+
+
+
+
+
+
+
+
+
+
+

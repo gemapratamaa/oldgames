@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>SDL</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<SCRIPT SRC="js/jquery.min.js"></SCRIPT>
+	<SCRIPT>
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "DxWnd.html?" + sTopicUrl;
+			}
+		});
+	
+	</SCRIPT>
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		TD P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		H1 { color: #000000; font-style: normal; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P></P>
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_configuration_sdl.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=503 HEIGHT=555 BORDER=0></P>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=189>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook SDL</P>
+			</TD>
+			<TD WIDTH=137>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOOKSDLLIB</P>
+			</TD>
+			<TD WIDTH=1171>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook games
+				using the SDL library.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=189>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook SDL2</P>
+			</TD>
+			<TD WIDTH=137>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HOOKSDL2LIB</P>
+			</TD>
+			<TD WIDTH=1171>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook games
+				using the SDL2 library.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=189>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SDL surface
+				emulation</P>
+			</TD>
+			<TD WIDTH=137>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SDLEMULATION</P>
+			</TD>
+			<TD WIDTH=1171></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=189>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Force
+				stretching</P>
+			</TD>
+			<TD WIDTH=137>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SDLFORCESTRETCH</P>
+			</TD>
+			<TD WIDTH=1171></TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=189>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Extend
+				SDL Hook</P>
+			</TD>
+			<TD WIDTH=137>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">EXTENDSDLHOOK</P>
+			</TD>
+			<TD WIDTH=1171>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">When set, DxWnd search 
+				for system calls to be hooked doesn't stop to SDL library but extends
+				to SDL dependencies. This way you can hook also DirectX or OpenGL linked
+				to the SDL modules.</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DIV>
+<DIV ID="topic_footer" DIR="LTR">
+	<P><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

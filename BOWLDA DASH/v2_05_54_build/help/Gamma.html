@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Gamma control</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		H1 { color: #000000; font-style: normal; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P></P>
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_gamma.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=481 HEIGHT=262 BORDER=0></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">This window allows you
+	to change the gamma ramp values for the windowed program. Currently works 
+	for ddraw rendering (setting the <A HREF="Directx2.html">"DirectX2/Enable gamma ramp emulation"</A> flag) 
+	or d3d lights (setting the <A HREF="Direct3d.html">"Direct3D/Enable light gamma ramp"</A> flag)</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Examples of use:</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Some fullscreen games
+	may rely on gamma control to set a dark enough environment in order
+	to have an immersive atmosphere. But hardware gamma control affects
+	the whole screen, so it may be inconvenient to change the gamma ramp
+	values for the surrounding windows and other desktop elements. So,
+	disabling hardware gamma control result in a less immersive game and
+	emulated gamma control can recover the effect. Even when the game
+	doesn't set a custom gamma control, if it is darker than the
+	surrounding desktop it will turn out much less visible than in
+	fullscreen mode. Again, emulated gamma control can compensate.</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">NOTE: You can save your 
+	custom gamma ramp values to dxwnd.ini so that the stored values will be 
+	loaded automatically and applied to programs flagged to use the virtualized 
+	gamma ramp.</P>
+</DIV>
+<DIV ID="topic_footer" DIR="LTR">
+	<P><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

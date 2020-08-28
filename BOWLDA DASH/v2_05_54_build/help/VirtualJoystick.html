@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Virtual Joystick</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		H1 { color: #000000; font-style: normal; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P></P>
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">In this window you can
+	configure the Virtual Joystick:</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/virtualJoystick.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=397 HEIGHT=359 BORDER=0></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">For the Virtual
+	Joystick to be detected by the game you also need to turn ON the
+	flag &quot;Enable Virtual Joystick&quot; in <A HREF="Input.html">Input-&gt;
+	Joystick.</A></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">More recent
+	games that use DirectInput for the joystick control can use this
+	feature turning ON the flags &quot;Hook dinput&quot; or &quot;Hook
+	dinput8&quot; in <A HREF="Input.html">Input-&gt;DirectInput.</A></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">If you are using
+	an Xbox controller you also need to enable the "Hook xinput" flag
+	in the <A HREF="Input.html">Input tab.</A></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">NOTE: In the joystick
+	panel the black cross shows the joystick position (0,0), the blue
+	circle and red dotted cross are scaled according to the sensitivity
+	to provide an immediate visual feedback of that value. Use the
+	slider to adjust the sensitivity (x100%).</P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Joystick
+				Enabled</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Disables or
+				enables the virtual joystick. DxWnd tries to guess the best
+				conditions by disabling the joystick when the mouse cursor is
+				visible, but you may have to switch the joystick on and off
+				according to the specific situation.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Crosshairs
+				Enabled</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">When enabled
+				shows white cross-hairs in the game screen that tracks the
+				virtual joystick movement.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Invert Y Axis</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Inverts the Y
+				axis.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Invert X Axis</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Inverts the X
+				axis.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">L - auto-fire</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Left button auto fire.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">R - auto-fire</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Right button auto fire.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Auto-center</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Keeps moving
+				more and more slowly the joystick position toward the 0,0
+				coordinates of the center so that, if the mouse is left unmoved,
+				the joystick becomes progressively centered.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=115>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Lock</P>
+			</TD>
+			<TD WIDTH=1428>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">When checked,
+				the mouse middle button becomes a toggle to enable or disable the 
+				virtual joystick. When disabled, the application still detects the 
+				presence of the joystick, but the axis coordinates are fixed at the 
+				central position and all buttons are in off state.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Joystick control:</P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">MouseWheel
+				for sensitivity</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Adjust the
+				mouse sensitivity with the wheel.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Mouse</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Contol
+				joystick with the mouse.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Keyboard</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Contol
+				joystick with the cursor keys.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Mouse+Keyboard</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Control
+				joystick with mouse and cursor keys.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">XBOX 360 controller:</P>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">all</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Assign mouse 
+			reading to both sticks.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">L only</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Assign mouse 
+			reading to left stick only.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=112>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">R only</P>
+			</TD>
+			<TD WIDTH=1431>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Assign mouse 
+			reading to right stick only.</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+
+	<DIV ID="topic_footer" DIR="LTR">
+		<P><BR>
+		</P>
+	</DIV>
+</DIV>
+</BODY>
+</HTML>

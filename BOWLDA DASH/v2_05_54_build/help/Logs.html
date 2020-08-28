@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Logs</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.3  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<SCRIPT SRC="js/jquery.min.js"></SCRIPT>
+	<SCRIPT>
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "DxWnd.html?" + sTopicUrl;
+			}
+		});
+	
+	</SCRIPT>
+	<STYLE TYPE="text/css">
+	<!--
+		P { margin-bottom: 0cm; border: none; padding: 0cm; color: #000000; font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; text-align: left; text-decoration: none }
+		P.rvps2 { font-family: "Arial", "Helvetica", sans-serif; font-size: 10pt; font-style: normal; font-weight: normal }
+		H3 { color: #000000 }
+		H3.cjk { font-family: "SimSun" }
+		H3.ctl { font-family: "Mangal" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" BGCOLOR="#ffffff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<DIV ID="topic_content" DIR="LTR">
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm"><IMG SRC="lib/dxwnd_configuration_logs3.png" NAME="grafiikka4" ALIGN=BOTTOM WIDTH=503 HEIGHT=555 BORDER=0></P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Handles dxwnd.log
+	logs. For collecting the basic log information select: &quot;Overwrite&quot;,
+	&quot;DxWnd hacks&quot;, &quot;DirectDraw Trace&quot;, &quot;Direct3D
+	trace&quot; and &quot;Debug&quot;. Then run your game until the
+	problem occurs and close the game. This will then save a log file
+	called dxwnd.log into your game folder. 
+	</P>
+	<P CLASS="rvps2" STYLE="margin-bottom: 0.5cm">Warning: Do not run
+	your game long with logs enabled. This may create a HUGE file.</P>
+	<P STYLE="margin-bottom: 0.5cm">See: <A HREF="TakingLogs.html">Taking
+	Logs Tutorial</A> 
+	</P>
+	<HR>
+	<H3 CLASS="western">dxwnd logs</H3>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=68>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">None</P>
+			</TD>
+			<TD WIDTH=1475>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">No logs.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=68>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Overwrite</P>
+			</TD>
+			<TD WIDTH=1475>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs will
+				erase and overwrite an existing dxwnd.log file.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=68>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Append</P>
+			</TD>
+			<TD WIDTH=1475>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">If a log
+				exists, logging messages will be added to the existing file.
+				Otherwise, a new file will be created.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=68>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Separated</P>
+			</TD>
+			<TD WIDTH=1475>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Each session
+				will write to a new, separate log file named dxwnd&lt;n&gt;.log
+				where n is the smallest usable number to avoid filename
+				conflicts.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=68>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Circular</P>
+			</TD>
+			<TD WIDTH=1475>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">In circular
+				logs mode dxwnd.log is filled with up to 50000 messages and then
+				swapped to dxwnd.0.log.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">log options</H3>
+	<TABLE WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Output debug
+				string</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTDEBUGSTRING</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Each log
+				message will be also generated as a debug message. This can be
+				useful to show the logs while they occur by using a runtime
+				scrollable view such as that offered by the DebugView.exe tool.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Add timestamp
+				to log</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ADDTIMESTAMP</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Adds a
+				timestamp with the system tick count (from GetTickCount() calls)
+				to the beginning of each line in a log file.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Relative
+				timestamp</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ADDRELATIVETIME</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">If the &quot;Add
+				timestamp to log&quot; option is on, the &quot;Relative
+				timestamp&quot; option adds a timestamp to the beginning of each
+				line in a log file that measures the duration between that line
+				and the previous one. This makes it easier to spot long
+				operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Thread ID</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">ADDTHREADID</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Adds a thread
+				id to log messages.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Debug</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTDEBUG</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Writes some
+				more detailed information for diagnostic purposes.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=138>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">HexDump trace</P>
+			</TD>
+			<TD WIDTH=131>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTHEXTRACE</P>
+			</TD>
+			<TD WIDTH=1268>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">When set,
+				some complex information is logged also in full hexadecimal
+				format.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P><BR>
+	</P>
+	<HR>
+	<H3 CLASS="western">logged info</H3>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DxWnd hacks</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTDXWINTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs all
+				significant events that DxWnd performs to run the fullscreen
+				program in windowed mode.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">DirectDraw
+				trace</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTDDRAWTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs
+				DirectDraw operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Direct3D
+				trace</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTD3DTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs Direct3D
+				operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">System libs</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTSYSLIBS</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs system library calls.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Win Events</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTWINMESSAGES</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs all
+				Window messages intercepted in the application's queues, along
+				with events that are generated or processed internally by the
+				Peek/GetMessage APIs.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Cursor/Mouse</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTCURSORTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs all
+				cursor- or mouse-related operations. Note that some old games
+				don't mind the possibility of concurrent use and perform many
+				mouse/cursor operations in a short period of time. This type of
+				log can quickly grow quite large. In this case, consider slowing
+				down the program with the &ldquo;Slow Down&rdquo; flag.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Import Table</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTIMPORTTABLE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs the
+				Import Table as seen by DxWnd. This can be quite useful to
+				analyze and troubleshoot uncommon executables (e.g. when copy
+				protections are applied).</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Registry op.</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTREGISTRY</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs registry
+				operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Hook op.</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">TRACEHOOKS</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs hooking
+				operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">WinG32 trace</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTWGTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs WinG32
+				operations</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OpenGL trace</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTOGLTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs OpenGL
+				operations</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">SDL trace</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTSDLTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs SDL
+				operations</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Time
+				stretching</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTTIMETRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs time
+				stretching transformations - beware, it can produce very big log
+				files.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Sound</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTSOUNDTRACE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs
+				DirectSound operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Inputs</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTINPUTS</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs
+				DirectInput operations.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=114>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Locale</P>
+			</TD>
+			<TD WIDTH=142>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">OUTLOCALE</P>
+			</TD>
+			<TD WIDTH=1277>
+				<P CLASS="rvps2" STYLE="border: none; padding: 0cm">Logs
+				locale transformation operations.</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<DIV ID="topic_footer" DIR="LTR">
+		<P STYLE="margin-bottom: 0.5cm"><BR><BR>
+		</P>
+	</DIV>
+</DIV>
+</BODY>
+</HTML>

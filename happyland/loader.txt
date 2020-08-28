@@ -1,0 +1,62 @@
+ 
+                          ***************************
+                          *  HAPPYLAND  ADVENTURES  *
+                          *    CAMPAIGN  LOADER     *
+                          ***************************
+                
+                            written by Eric Love
+
+
+Happyland Adventures comes with two sets of levels, and the option of playing others (of which there are many, thanks to the easy map editor). It can take a long time adding levels on the Create Custom Game screen, so I created this loader utility which does it for you.
+
+
+HOW TO USE THE LOADER (instructions for players)
+
+If you run loader.exe by itself, you need to find the .txt file corresponding to the campaign to load. Alternatively, in Windows you can drag a .txt file onto loader.exe or a shortcut to it.
+If the file has been written incorrectly, you will get an error message. Otherwise, it's OK. Run happy.exe, choose Create Custom Game, and all the files will already be listed, and you can do Play! straight away. The normal levels play in the order they are listed, and if you save all the Happylanders and collect all the coins, you randomly go into one of the bonus rooms.
+If you can't get through the whole campaign and want to start part of the way through, you can right-click on the top levels in the list to remove them. To get them back in the list next time, you have to run the loader again.
+
+
+THE FORMAT (instructions for map designers)
+
+A campaign should be described in a .txt file. Before you list the files, have a line beginning with a # (doesn't matter what else is on that line). List all the normal levels in order, each on a separate line, up to a maximum of 18 files. After that leave another line with a #. Then list all the bonus levels, up to a maximum of 8, and then another #. After that it doesn't matter, so you can write any comments about the maps, credit yourself, or whatever you want. You can also leave comments before the first #. Include the .txt file in the same directory as the .map files, and anyone who downloads a .zip of all your files will be able to play the levels in order.
+
+Example:
+***  A QUEST ***
+A series of Happyland maps by Some Person
+
+# Normal levels:
+aq_level1.map
+aq_level2.map
+aq_level3.map
+aq_dark.map
+aq_ending.map
+# Bonus maps
+aq_bonus1.map
+aq_bonus2.map
+# End
+
+Comments about the maps
+sperson@.address.au
+
+
+
+DISCLAIMER
+                  
+    I do not accept responsibility for any effects, adverse or otherwise, 
+    that this software may have on you, your computer, your sanity, your 
+    dog, or anything else that you can think of. Use it at your own risk. 
+
+
+AUTHORS & CONTACT
+
+    Happyland Adventures site: www.freelunchdesign.com/happyland.shtml
+    The game was created by Johan Peitz.
+
+    The loader was created by me (Eric Love).
+
+        theloves@chariot.net.au
+      http://www.chariot.net.au/~theloves
+
+
+                                - The End -

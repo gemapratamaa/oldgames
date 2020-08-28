@@ -1,0 +1,19 @@
+﻿/*
+*	Input the following line under the <HEAD> element in your HTML document:
+*	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+*/
+
+
+body, table
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+br {
+   display: block;
+   margin: 1px 0;
+}
